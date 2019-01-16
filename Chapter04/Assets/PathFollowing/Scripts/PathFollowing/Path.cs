@@ -6,6 +6,7 @@ public class Path: MonoBehaviour
     private Vector3[] waypoints;
 
     public bool isDebug = true;
+    // the radius is for checking if cube reach the waypoint.
     public float radius = 2.0f;
 
     public float PathLength {

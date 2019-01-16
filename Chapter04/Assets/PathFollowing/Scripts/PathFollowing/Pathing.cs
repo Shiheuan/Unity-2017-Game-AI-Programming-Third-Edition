@@ -43,7 +43,14 @@ public class Pathing : MonoBehaviour
         direction += Steer(targetPoint);
         transform.position += direction; //Move the agent according to the direction
         transform.rotation = Quaternion.LookRotation(direction); //Rotate the agent towards the desired direction
-	}
+
+        /* avoid the mass influence. dont decreace the "steering force" vector. */
+        //targetDirection = (targetPoint - transform.position);
+        //targetDirection.Normalize();
+        //targetDirection *= currentSpeed;
+        //transform.position += targetDirection; //Move the agent according to the direction
+        //transform.rotation = Quaternion.LookRotation(targetDirection); //Rotate the agent towards the desired direction
+    }
 
     /*
      * Attempt to set the next target point. If there are enough points available,
