@@ -17,17 +17,21 @@ public class Path: MonoBehaviour
         return waypoints[index];
     }
     
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         if (!isDebug) {
             return;
         }
-
+        Gizmos.color = Color.green;
+        Gizmos.DrawCube(this.transform.position, Vector3.one * 1.1f);
         for (int i = 0; i < waypoints.Length; i++)
         {
             if (i + 1 < waypoints.Length)
             {
-                Debug.DrawLine(waypoints[i], waypoints[i + 1], Color.red);
+                //Debug.DrawLine(waypoints[i], waypoints[i + 1], Color.red);
+                // Debug.DrawLine dont disappear after they have drawed.
+
+                Gizmos.DrawLine(waypoints[i], waypoints[i + 1]/*, Color.red*/);
             }
         }
     }
