@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-[System.Serializable]
+﻿[System.Serializable]
 public abstract class Node {
 
     /* Delegate that returns the state of the node.*/
