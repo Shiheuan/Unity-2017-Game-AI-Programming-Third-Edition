@@ -1,20 +1,26 @@
-﻿[System.Serializable]
-public abstract class Node {
+﻿namespace SimBTs
+{
+    [System.Serializable]
+    public abstract class Node
+    {
 
-    /* Delegate that returns the state of the node.*/
-    public delegate NodeStates NodeReturn();
+        /* Delegate that returns the state of the node.*/
+        public delegate NodeStates NodeReturn();
 
-    /* The current state of the node */
-    protected NodeStates m_nodeState;
+        /* The current state of the node */
+        protected NodeStates m_nodeState;
 
-    public NodeStates nodeState {
-        get { return m_nodeState; }
+        public NodeStates nodeState
+        {
+            get { return m_nodeState; }
+        }
+
+        /* The constructor for the node */
+        public Node() { }
+
+        /* Implementing classes use this method to valuate the desired set of conditions */
+        public abstract NodeStates Evaluate();
+
     }
-
-    /* The constructor for the node */
-    public Node() {}
-
-    /* Implementing classes use this method to valuate the desired set of conditions */
-    public abstract NodeStates Evaluate();
 
 }
