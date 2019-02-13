@@ -47,10 +47,16 @@ namespace SimBTs
 
             /** Lastly, we have our root node. First, we prepare our list of children
              * nodes to pass in */
-            List<Node> rootChildren = new List<Node>();
-            rootChildren.Add(m_node2A);
-            rootChildren.Add(m_node2B);
-            rootChildren.Add(m_node2C);
+            List<Node> rootChildren = new List<Node>()
+            {
+                m_node2A,
+                m_node2B,
+                m_node2C,
+            };
+            //List<Node> rootChildren = new List<Node>();
+            //rootChildren.Add(m_node2A);
+            //rootChildren.Add(m_node2B);
+            //rootChildren.Add(m_node2C);
 
             /** Then we create our root node object and pass in the list */
             m_rootNode = new Selector(rootChildren);
